@@ -6,34 +6,6 @@ An Angular 20+ library featuring an iOS Liquid Glass-style Floating Action Butto
 ![Angular](https://img.shields.io/badge/angular-20%2B-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## 📸 Screenshots
-
-<div align="center">
-
-### Glass Variant in Action
-
-<img src="../../.github/screenshots/fab-demo.png" alt="FAB Demo" width="390"/>
-
-*iOS Liquid Glass-style FAB with backdrop blur effect*
-
----
-
-### Menu Expanded
-
-<img src="../../.github/screenshots/fab-menu-open.png" alt="FAB Menu Open" width="390"/>
-
-*Smooth morphing animation with glass card menu*
-
----
-
-### FAB Button Close-up
-
-<img src="../../.github/screenshots/fab-button.png" alt="FAB Button" width="390"/>
-
-*Floating action button with stacked coaster layers*
-
-</div>
-
 ## Features
 
 - ✨ **Glass Variant**: iOS-style liquid glass effect with backdrop blur
