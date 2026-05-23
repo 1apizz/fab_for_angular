@@ -1,0 +1,61 @@
+<div class="vsf-fab-container" [class.vsf-fab-container--right]="position === 'right'" [class.vsf-fab-container--left]="position === 'left'">
+  <!-- FAB Menu (popup) -->
+  @if (renderPopup) {
+    <vsf-fab-menu
+      [items]="itemsWithCurrent"
+      [variant]="variant"
+      [position]="position"
+      [closing]="closing"
+      (itemSelected)="onItemSelect($event)"
+      (backdropClick)="onBackdropClick()"
+    ></vsf-fab-menu>
+  }
+
+  <!-- FAB Button with coaster layers -->
+  <div class="vsf-fab-wrapper">
+    <!-- Stacked coaster (glass variant only) -->
+    @if (variant === 'glass') {
+      <span
+        class="vsf-fab-coaster"
+        [class.vsf-fab-coaster--fade]="isOpen"
+        aria-hidden="true"
+      ></span>
+    }
+
+    <!-- Main FAB button -->
+    <button
+      class="vsf-fab"
+      [class.vsf-fab--glass]="variant === 'glass'"
+      [class.vsf-fab--solid]="variant === 'solid'"
+      [class.vsf-fab--open]="isOpen"
+      [class.vsf-fab--morph-away]="variant === 'glass' && isOpen"
+      [attr.aria-label]="isOpen ? 'Close switcher' : 'Switch product (currently ' + currentItem?.label + ')'"
+      [attr.aria-hidden]="variant === 'glass' && isOpen ? true : null"
+      [attr.tabindex]="variant === 'glass' && isOpen ? -1 : 0"
+      (click)="toggleOpen()"
+    >
+      <span
+        class="vsf-fab__icon"
+        [class.vsf-fab__icon--open]="isOpen && variant !== 'glass'"
+        [innerHTML]="currentItem?.icon"
+      ></span>
+
+      <!-- Corner switcher badge (solid variant only) -->
+      @if (!isOpen && variant === 'solid') {
+        <span class="vsf-fab__badge" aria-hidden="true">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="7" cy="7" r="2.8" />
+            <circle cx="17" cy="7" r="2.8" />
+            <circle cx="7" cy="17" r="2.8" />
+            <circle cx="17" cy="17" r="2.8" />
+          </svg>
+        </span>
+      }
+    </button>
+  </div>
+
+  <!-- Toast notification -->
+  @if (toastItem) {
+    <vsf-toast [item]="toastItem" [position]="toastPosition"></vsf-toast>
+  }
+</div>

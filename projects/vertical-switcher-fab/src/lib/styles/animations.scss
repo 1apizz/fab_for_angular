@@ -1,0 +1,103 @@
+/* Animation definitions for Vertical Switcher FAB */
+
+@keyframes vsfFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vsfFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vsfPillIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes vsfGlassIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes vsfGlassOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.55);
+  }
+}
+
+@keyframes vsfToastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes vsfToastOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -6px) scale(0.96);
+  }
+}
+
+/* Utility animation classes */
+.vsf-fade-in {
+  animation: vsfFadeIn 180ms ease-out both;
+}
+
+.vsf-fade-out {
+  animation: vsfFadeOut 200ms ease-in both;
+}
+
+.vsf-pill-in {
+  animation: vsfPillIn 200ms cubic-bezier(0.2, 0.9, 0.3, 1.05) both;
+}
+
+.vsf-glass-in {
+  animation: vsfGlassIn 280ms cubic-bezier(0.2, 0.9, 0.3, 1.05) both;
+}
+
+.vsf-glass-out {
+  animation: vsfGlassOut 220ms cubic-bezier(0.5, 0, 0.75, 0) both;
+}
+
+.vsf-toast-in {
+  animation: vsfToastIn 220ms cubic-bezier(0.2, 0.9, 0.3, 1.05) both;
+}
+
+.vsf-toast-out {
+  animation: vsfToastOut 200ms ease-in both;
+}

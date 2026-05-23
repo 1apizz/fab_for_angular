@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.demo-container {
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(238, 45, 92, 0.1), transparent 60%),
+    radial-gradient(900px 500px at 110% 110%, rgba(93, 213, 215, 0.1), transparent 60%),
+    #0a1220;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.demo-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+}
+
+.demo-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.phone-mockup {
+  width: 390px;
+  height: 780px;
+  background: #19243b;
+  border-radius: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #0e1726;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.app-header {
+  padding: 12px 20px;
+  background: #19243b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .current-section {
+    font-size: 12px;
+    padding: 4px 10px;
+    background: rgba(93, 213, 215, 0.1);
+    color: #5dd5d7;
+    border-radius: 999px;
+    border: 1px solid rgba(93, 213, 215, 0.3);
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+}
+
+.app-content {
+  flex: 1;
+  padding: 24px 20px 120px;
+  overflow-y: auto;
+
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 24px;
+  }
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature {
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+
+  strong {
+    color: #5dd5d7;
+    font-weight: 700;
+  }
+}
+
+.fab-container {
+  position: absolute;
+  bottom: 20px;
+  right: 14px;
+  z-index: 10;
+}
+
+.demo-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .demo-header h1 {
+    font-size: 32px;
+  }
+
+  .phone-mockup {
+    width: 100%;
+    max-width: 390px;
+    height: 680px;
+  }
+}

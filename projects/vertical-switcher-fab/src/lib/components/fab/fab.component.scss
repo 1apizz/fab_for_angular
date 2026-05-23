@@ -1,0 +1,129 @@
+@import '../../styles/tokens.scss';
+@import '../../styles/animations.scss';
+
+:host {
+  display: block;
+  position: relative;
+}
+
+.vsf-fab-container {
+  position: relative;
+  display: inline-block;
+}
+
+.vsf-fab-wrapper {
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+
+// ═══ COASTER (background layer for glass variant) ═══
+.vsf-fab-coaster {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 4px), calc(-50% + 4px)) rotate(-32deg) scale(1);
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: #222c44;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 -1px 0 rgba(0, 0, 0, 0.25) inset;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 220ms ease, transform 240ms cubic-bezier(0.2, 0.9, 0.3, 1.2);
+
+  &.vsf-fab-coaster--fade {
+    opacity: 0;
+    transform: translate(calc(-50% - 4px), calc(-50% + 4px)) rotate(-32deg) scale(0.55);
+  }
+}
+
+// ═══ FAB BUTTON ═══
+.vsf-fab {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-6deg) scale(1);
+  width: 56px;
+  height: 56px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  padding: 0;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.3, 1.2), opacity 160ms ease, background 200ms;
+
+  &:focus-visible {
+    outline: 2px solid var(--vsf-cyan);
+    outline-offset: 2px;
+  }
+
+  // Glass variant styles
+  &.vsf-fab--glass {
+    border-radius: 18px;
+    border: 0.5px solid rgba(93, 213, 215, 0.3);
+    background: linear-gradient(rgba(93, 213, 215, 0.16), rgba(93, 213, 215, 0.16)),
+      rgba(20, 24, 32, 0.58);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    color: var(--vsf-cyan);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset;
+  }
+
+  // Solid variant styles
+  &.vsf-fab--solid {
+    border-radius: 999px;
+    background: var(--vsf-pink);
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(238, 45, 92, 0.45), 0 2px 4px rgba(238, 45, 92, 0.25);
+  }
+
+  // Open state (slight scale down)
+  &.vsf-fab--open:not(.vsf-fab--morph-away) {
+    transform: translate(-50%, -50%) rotate(-6deg) scale(0.92);
+  }
+
+  // Morph away state (glass variant only - fades and shrinks during menu open)
+  &.vsf-fab--morph-away {
+    transform: translate(-50%, -50%) rotate(-6deg) scale(0.55);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.vsf-fab__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: transform 180ms cubic-bezier(0.2, 0.9, 0.3, 1.2);
+
+  .vsf-fab--open:not(.vsf-fab--morph-away) & {
+    transform: scale(0.92);
+  }
+
+  ::ng-deep svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+// Corner switcher badge (solid variant only)
+.vsf-fab__badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--vsf-pink);
+  border: 2px solid var(--vsf-pink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}

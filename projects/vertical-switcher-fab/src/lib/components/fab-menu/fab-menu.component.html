@@ -1,0 +1,58 @@
+<div class="vsf-fab-menu__backdrop" (click)="onBackdropClickHandler()"></div>
+
+<div
+  class="vsf-fab-menu__content"
+  [class.vsf-fab-menu__content--glass]="variant === 'glass'"
+  [class.vsf-fab-menu__content--solid]="variant === 'solid'"
+>
+  @if (variant === 'glass') {
+    <!-- Unified glass card with rows -->
+    <div class="vsf-fab-menu__glass-card">
+      <!-- Top lensing highlight for glass effect -->
+      <div class="vsf-fab-menu__glass-highlight" aria-hidden="true"></div>
+
+      @for (item of items; track item.id; let i = $index) {
+        <button
+          class="vsf-fab-menu__glass-row"
+          [class.vsf-fab-menu__glass-row--current]="item.current"
+          [class.vsf-fab-menu__glass-row--first]="i === 0"
+          [style.animation-delay]="i * 24 + 'ms'"
+          (click)="onItemClick(item)"
+        >
+          <span
+            class="vsf-fab-menu__glass-row-icon"
+            [style.background]="item.current ? 'var(--vsf-cyan)' : 'rgba(255,255,255,0.10)'"
+            [style.color]="item.current ? '#0A1A2E' : '#fff'"
+            [innerHTML]="item.icon"
+          ></span>
+
+          <span class="vsf-fab-menu__glass-row-content">
+            <span
+              class="vsf-fab-menu__glass-row-label"
+              [style.color]="item.current ? 'var(--vsf-cyan)' : '#fff'"
+            >
+              {{ item.label }}
+            </span>
+            <span class="vsf-fab-menu__glass-row-sub">{{ item.sub }}</span>
+          </span>
+
+          @if (item.current) {
+            <span class="vsf-fab-menu__glass-row-indicator" aria-hidden="true"></span>
+          }
+        </button>
+      }
+    </div>
+  } @else {
+    <!-- Solid variant with separate pill items -->
+    <div class="vsf-fab-menu__pills">
+      @for (item of items; track item.id; let i = $index) {
+        <vsf-fab-item
+          [item]="item"
+          [variant]="variant"
+          [delay]="i * 28"
+          (itemClick)="onItemClick($event)"
+        ></vsf-fab-item>
+      }
+    </div>
+  }
+</div>

@@ -1,0 +1,54 @@
+<div class="demo-container">
+  <div class="demo-header">
+    <h1>Vertical Switcher FAB</h1>
+    <p>Angular library for iOS Liquid Glass-style floating action button switcher</p>
+  </div>
+
+  <div class="demo-content">
+    <div class="phone-mockup">
+      <div class="phone-screen">
+        <div class="app-header">
+          <div class="logo">Demo App</div>
+          <div class="current-section">{{ currentProductId }}</div>
+        </div>
+
+        <div class="app-content">
+          <h2>{{ currentProductId | titlecase }} Section</h2>
+          <p>Tap the FAB button in the bottom right to switch between sections.</p>
+
+          <div class="features">
+            <div class="feature">
+              <strong>Glass Variant:</strong> iOS-style liquid glass effect with backdrop blur
+            </div>
+            <div class="feature">
+              <strong>Solid Variant:</strong> Traditional material design style (change variant in code)
+            </div>
+            <div class="feature">
+              <strong>Animated:</strong> Smooth transitions and morphing effects
+            </div>
+            <div class="feature">
+              <strong>Accessible:</strong> Keyboard navigation (ESC to close)
+            </div>
+          </div>
+        </div>
+
+        <!-- FAB Component -->
+        <div class="fab-container">
+          <vsf-fab
+            [items]="fabItems"
+            [variant]="'glass'"
+            [position]="'right'"
+            [currentProductId]="currentProductId"
+            [showToast]="true"
+            [toastPosition]="'center'"
+            (productChange)="onProductChange($event)"
+          ></vsf-fab>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-footer">
+    <p>Built with Angular 20+ | Inspired by iOS Liquid Glass design</p>
+  </div>
+</div>

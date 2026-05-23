@@ -1,0 +1,34 @@
+<button
+  class="vsf-fab-item"
+  [class.vsf-fab-item--glass]="variant === 'glass'"
+  [class.vsf-fab-item--current]="item.current"
+  (click)="onClick()"
+>
+  <span
+    class="vsf-fab-item__icon"
+    [style.background]="item.current ? 'var(--vsf-cyan)' : (variant === 'glass' ? 'rgba(255,255,255,0.08)' : toneStyles.bg)"
+    [style.color]="item.current ? (variant === 'glass' ? '#0A1A2E' : '#FFFFFF') : (variant === 'glass' ? '#fff' : toneStyles.fg)"
+    [innerHTML]="item.icon"
+  ></span>
+
+  <span class="vsf-fab-item__content">
+    <span
+      class="vsf-fab-item__label"
+      [style.color]="item.current ? (variant === 'glass' ? 'var(--vsf-cyan)' : 'var(--vsf-cyan-700)') : (variant === 'glass' ? '#fff' : 'var(--vsf-ink)')"
+    >
+      {{ item.label }}
+    </span>
+    <span
+      class="vsf-fab-item__sub"
+      [style.color]="variant === 'glass' ? 'rgba(255,255,255,0.60)' : 'var(--vsf-muted)'"
+    >
+      {{ item.sub }}
+    </span>
+  </span>
+
+  <span
+    *ngIf="item.current"
+    class="vsf-fab-item__indicator"
+    aria-hidden="true"
+  ></span>
+</button>

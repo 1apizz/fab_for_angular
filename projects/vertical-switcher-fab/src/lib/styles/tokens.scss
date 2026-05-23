@@ -1,0 +1,80 @@
+/* Design tokens for Vertical Switcher FAB */
+
+:root {
+  /* Brand */
+  --vsf-brand: #0a1a2e;
+  --vsf-brand-700: #050e1b;
+  --vsf-brand-50: #1b2740;
+
+  /* Action accents */
+  --vsf-cyan: #5dd5d7;
+  --vsf-cyan-700: #2ba9ac;
+  --vsf-cyan-50: rgba(93, 213, 215, 0.1);
+
+  --vsf-pink: #ee2d5c;
+  --vsf-pink-700: #b81f47;
+  --vsf-pink-50: rgba(238, 45, 92, 0.12);
+
+  /* Neutrals — DARK */
+  --vsf-bg: #0e1726;
+  --vsf-surface: #19243b;
+  --vsf-surface-2: #1f2c45;
+  --vsf-surface-3: #2a3855;
+  --vsf-ink: #ffffff;
+  --vsf-ink-2: rgba(255, 255, 255, 0.92);
+  --vsf-muted: #8893a8;
+  --vsf-muted-2: #5c677d;
+  --vsf-border: rgba(255, 255, 255, 0.08);
+  --vsf-border-2: rgba(255, 255, 255, 0.18);
+
+  /* Accent tones */
+  --vsf-gold: #f2b73b;
+  --vsf-gold-bg: #fff6e0;
+  --vsf-gold-fg: #8a6a12;
+
+  --vsf-violet: #7c5cff;
+  --vsf-violet-bg: rgba(124, 92, 255, 0.14);
+  --vsf-violet-fg: #7c5cff;
+
+  /* Radii */
+  --vsf-r-xs: 4px;
+  --vsf-r-sm: 6px;
+  --vsf-r-md: 10px;
+  --vsf-r-lg: 14px;
+  --vsf-r-xl: 22px;
+
+  /* Shadows */
+  --vsf-sh-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.2);
+  --vsf-sh-2: 0 4px 12px rgba(0, 0, 0, 0.32), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --vsf-sh-3: 0 12px 32px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  /* Typography */
+  --vsf-ff-body: 'Manrope', system-ui, -apple-system, sans-serif;
+  --vsf-ff-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --vsf-ff-num: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+
+/* Light theme support */
+[data-theme='light'] {
+  --vsf-bg: #f4f5f7;
+  --vsf-surface: #ffffff;
+  --vsf-surface-2: #f9fafb;
+  --vsf-surface-3: #f0f1f4;
+  --vsf-ink: #14181f;
+  --vsf-ink-2: #2a3038;
+  --vsf-muted: #5a6271;
+  --vsf-muted-2: #8a92a2;
+  --vsf-border: #e5e7eb;
+  --vsf-border-2: #d1d5db;
+}
+
+/* Base utility classes */
+.vsf {
+  box-sizing: border-box;
+  font-family: var(--vsf-ff-body);
+  color: var(--vsf-ink);
+
+  * {
+    box-sizing: border-box;
+  }
+}

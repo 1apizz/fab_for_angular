@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Reset styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// CSS Variables (copied from library for demo)
+:root {
+  --vsf-cyan: #5dd5d7;
+  --vsf-pink: #ee2d5c;
+  --vsf-gold: #f2b73b;
+  --vsf-bg: #0e1726;
+  --vsf-surface: #19243b;
+  --vsf-ink: #ffffff;
+  --vsf-ff-body: 'Manrope', system-ui, sans-serif;
+  --vsf-ff-display: 'Space Grotesk', system-ui, sans-serif;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "vertical-switcher-fab",
+  "version": "1.0.0",
+  "description": "iOS Liquid Glass-style Floating Action Button for Angular 20+",
+  "keywords": [
+    "angular",
+    "fab",
+    "floating-action-button",
+    "ios",
+    "liquid-glass",
+    "material-design",
+    "switcher",
+    "navigation",
+    "mobile",
+    "ui-component"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/vertical-switcher-fab.git"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=20.0.0",
+    "@angular/core": ">=20.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

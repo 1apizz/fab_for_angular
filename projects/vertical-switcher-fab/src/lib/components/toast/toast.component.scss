@@ -1,0 +1,70 @@
+@import '../../styles/tokens.scss';
+@import '../../styles/animations.scss';
+
+:host {
+  position: fixed;
+  left: 50%;
+  z-index: 200;
+  pointer-events: none;
+  animation: vsfToastIn 220ms cubic-bezier(0.2, 0.9, 0.3, 1.05) both;
+
+  &.vsf-toast--out {
+    animation: vsfToastOut 200ms ease-in both;
+  }
+
+  // Position variants
+  &.vsf-toast--top {
+    top: 18px;
+    transform: translateX(-50%);
+  }
+
+  &.vsf-toast--center {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.vsf-toast--bottom {
+    bottom: 100px;
+    transform: translateX(-50%);
+  }
+}
+
+.vsf-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px 10px 12px;
+  background: rgba(22, 26, 36, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 0.5px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-family: var(--vsf-ff-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vsf-toast__thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--vsf-cyan);
+  color: #0a1a2e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  ::ng-deep svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.vsf-toast__text {
+  strong {
+    color: var(--vsf-cyan);
+    font-weight: 700;
+  }
+}
