@@ -6,6 +6,39 @@ An Angular 20+ library featuring an iOS Liquid Glass-style Floating Action Butto
 ![Angular](https://img.shields.io/badge/angular-20%2B-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+## 📸 Screenshots
+
+<div align="center">
+
+### Demo Application
+
+<img src="../../.github/screenshots/demo-preview.png" alt="Demo Preview" width="390"/>
+
+*Phone mockup showing the FAB in a modern app interface*
+
+<br/>
+
+### FAB States
+
+<table>
+<tr>
+<td align="center">
+<img src="../../.github/screenshots/fab-closed.png" alt="FAB Closed" width="600"/>
+<br/>
+<em>Default state with FAB button</em>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="../../.github/screenshots/fab-open.png" alt="FAB Open" width="600"/>
+<br/>
+<em>Menu expanded with glass effect</em>
+</td>
+</tr>
+</table>
+
+</div>
+
 ## Features
 
 - ✨ **Glass Variant**: iOS-style liquid glass effect with backdrop blur
