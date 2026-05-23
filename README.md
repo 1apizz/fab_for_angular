@@ -2,6 +2,16 @@
 
 This repository contains the **Vertical Switcher FAB** Angular library, an iOS Liquid Glass-style Floating Action Button component for product/app switching.
 
+## 📸 Preview
+
+<div align="center">
+
+<img src=".github/screenshots/fab-demo.png" alt="FAB Demo" width="390"/>
+
+*iOS Liquid Glass-style FAB with smooth animations and backdrop blur*
+
+</div>
+
 ## 📦 Package
 
 This is a monorepo containing:
